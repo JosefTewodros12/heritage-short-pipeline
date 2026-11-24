@@ -1,0 +1,88 @@
+{
+  "title": "The Evening Buna and Mother's Proverb",
+  "language": "am",
+  "aspect_ratios": ["16:9", "9:16"],
+  "style_anchor": "Warm cinematic illustration, soft golden-hour sunlight, rich earthy tones, gentle film grain, consistent character design, no text in image",
+  "shots": [
+    {
+      "id": "shot_01",
+      "duration_sec": 8,
+      "reason": "Establish the warm home setting and introduce the evening heritage mood.",
+      "narration": "በማታ ሰዓት የቡና ሽታ ቤታችንን ሲሞላ፣ የቤተሰባችን ታሪክ ይጀምራል።",
+      "subtitle_en": "When evening coffee fills our home, our family's story begins.",
+      "image_prompt": "An illustrated Ethiopian elder woman in a traditional white netela sitting beside a clay jebena over glowing charcoal in a cozy room",
+      "motion_prompt": "Slow gentle camera push-in, soft rising steam, warm light flicker",
+      "seed": 101
+    },
+    {
+      "id": "shot_02",
+      "duration_sec": 8,
+      "reason": "Show the listener learning daily discipline and family memory.",
+      "narration": "በልጅነቴ በየቀኑ ትዕግሥትን እና ጽናትን ከቤተሰቤ ተምሬያለሁ።",
+      "subtitle_en": "Growing up, I learned patience and resilience every single day.",
+      "image_prompt": "A young student sitting at a wooden table by a window at dusk, listening attentively as warm light falls across a notebook",
+      "motion_prompt": "Slow pan right across the desk and window light",
+      "seed": 102
+    },
+    {
+      "id": "shot_03",
+      "duration_sec": 8,
+      "reason": "Use a close-up insert of roasted coffee beans as a visual motif.",
+      "narration": "ችግር ሲገጥመን እናቴ ሁልጊዜ የምትደግመው ምሳሌ ነበራት።",
+      "subtitle_en": "Whenever trouble came our way, my mother repeated a guiding proverb.",
+      "image_prompt": "Close-up illustration of roasted coffee beans in a shallow woven basket with warm amber highlights and soft depth of field",
+      "motion_prompt": "Gentle slow zoom-in on the roasted beans",
+      "seed": 103
+    },
+    {
+      "id": "shot_04",
+      "duration_sec": 8,
+      "reason": "Reinforce steady effort through traditional coffee preparation.",
+      "narration": "ጥድፊያ ሳይሆን ቀስ ብሎ መሥራት ውጤት እንደሚያመጣ አስተማረችን።",
+      "subtitle_en": "She taught us that steady, careful effort brings lasting results.",
+      "image_prompt": "Steam rising gently from a traditional clay coffee pot onto small ceramic cups on a low wooden table",
+      "motion_prompt": "Slow pan left with gentle steam drift",
+      "seed": 104
+    },
+    {
+      "id": "shot_05",
+      "duration_sec": 8,
+      "reason": "Connect family wisdom to modern study and engineering persistence.",
+      "narration": "በትምህርት እና በሕይወት ፈተናዎች ውስጥ ያ መንገድ ብርሃን ሆኖኛል።",
+      "subtitle_en": "Through study and life's trials, that wisdom became my light.",
+      "image_prompt": "A young software student working calmly on a laptop at night with a warm desk lamp and quiet determination",
+      "motion_prompt": "Slow camera pull-back revealing the quiet study corner",
+      "seed": 105
+    },
+    {
+      "id": "shot_06",
+      "duration_sec": 8,
+      "reason": "Bridge heritage and modern AI/code creation visually.",
+      "narration": "ዛሬ ቴክኖሎጂን ተጠቅሜ ያንን ትዝታ ወደ ታሪክ እቀይራለሁ።",
+      "subtitle_en": "Today, using code and AI, I turn that memory into a living story.",
+      "image_prompt": "A symbolic bridge between traditional Ethiopian highland hills at sunrise and soft warm light beams in the sky",
+      "motion_prompt": "Slow pan right across the sunlit highlands",
+      "seed": 106
+    },
+    {
+      "id": "shot_07",
+      "duration_sec": 8,
+      "reason": "Highlight generational connection and shared warmth.",
+      "narration": "የትውልድ ትውስታ ሲጠበቅ የነገ ራዕይ ይበልጥ ይጠራል።",
+      "subtitle_en": "When heritage is remembered, our vision for tomorrow grows clearer.",
+      "image_prompt": "Two generations—an elder and a young adult—smiling warmly together in golden afternoon light",
+      "motion_prompt": "Gentle slow zoom-in on their warm expressions",
+      "seed": 107
+    },
+    {
+      "id": "shot_08",
+      "duration_sec": 8,
+      "reason": "Close on a wide peaceful landscape to let the story land.",
+      "narration": "ይህ የቤተሰባችን ቅርስ እና የእኛ ጉዞ ነው።",
+      "subtitle_en": "This is our family's heritage, and this is our journey.",
+      "image_prompt": "Wide peaceful view of green Ethiopian highlands under warm twilight clouds, calm and hopeful mood",
+      "motion_prompt": "Slow zoom-out across the tranquil hills",
+      "seed": 108
+    }
+  ]
+}
