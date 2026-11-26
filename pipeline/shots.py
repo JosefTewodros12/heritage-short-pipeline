@@ -1,13 +1,12 @@
 import subprocess
 import time
 from pathlib import Path
-from typing import Any
 
 from pipeline.common import (
     OUTPUTS_DIR,
     compute_input_hash,
-    log_run,
     load_and_validate_storyboard,
+    log_run,
 )
 from pipeline.keyframes import run_keyframes_stage
 
@@ -19,7 +18,6 @@ def _build_zoompan_filter(motion_prompt: str, duration_sec: float, fps: int = 24
     total_frames = max(24, int(round(duration_sec * fps)))
 
     if "zoom-out" in motion_l or "pull-back" in motion_l or "pull back" in motion_l:
-        # Zoom out gently from 1.15x to 1.0x
         z_expr = f"1.15-0.15*(on/{total_frames})"
         x_expr = "iw/2-(iw/zoom/2)"
         y_expr = "ih/2-(ih/zoom/2)"
@@ -32,7 +30,6 @@ def _build_zoompan_filter(motion_prompt: str, duration_sec: float, fps: int = 24
         x_expr = f"(iw-iw/zoom)*(on/{total_frames})"
         y_expr = "ih/2-(ih/zoom/2)"
     else:
-        # Default gentle push-in / zoom-in from 1.0x to 1.12x
         z_expr = f"1.0+0.12*(on/{total_frames})"
         x_expr = "iw/2-(iw/zoom/2)"
         y_expr = "ih/2-(ih/zoom/2)"
@@ -73,7 +70,7 @@ def _render_motion_clip(keyframe_path: Path, out_path: Path, motion_prompt: str,
 def run_shots_stage(force: bool = False, keyframes: dict[str, Path] | None = None) -> dict[str, Path]:
     storyboard = load_and_validate_storyboard()
     if keyframes is None:
-        keyframes = run_keyframes_stage(force=False)
+        keyframes = run_keyframes_stage(force=force)
 
     CLIPS_DIR.mkdir(parents=True, exist_ok=True)
     outputs: dict[str, Path] = {}
@@ -148,5 +145,5 @@ def run_shots_stage(force: bool = False, keyframes: dict[str, Path] | None = Non
 
 
 if __name__ == "__main__":
-    clip_paths = run_shots_stage()
+    clip_paths = run_shots_stage(force=True)
     print(f"Shots stage complete: {len(clip_paths)} clips in {CLIPS_DIR}")

@@ -115,7 +115,6 @@ def _mix_narration_and_score(
     total_duration_sec: float,
     out_wav: Path,
 ) -> None:
-    # Build joined narration track padded/trimmed per shot
     nar_concat_list = WORK_DIR / "concat_narration.txt"
     nar_concat_list.write_text(
         "\n".join(
@@ -144,7 +143,6 @@ def _mix_narration_and_score(
         text=True,
     )
 
-    # Duck score under narration via sidechaincompress + normalize to ~ -14 LUFS
     filter_complex = (
         f"[1:a]atrim=0:{total_duration_sec:.2f},asetpts=PTS-STARTPTS,volume=0.55[music];"
         f"[0:a]apad=whole_dur={total_duration_sec:.2f},volume=1.15[voice];"
@@ -179,7 +177,6 @@ def _export_aspect_ratio(
     aspect_ratio: str,
 ) -> None:
     if aspect_ratio == "9:16":
-        # Center-crop 16:9 (1280x720) to 9:16 vertical (720x1280) with subtle blurred backdrop
         vf = (
             "[0:v]scale=720:1280:force_original_aspect_ratio=increase,"
             "crop=720:1280,boxblur=20:5[bg];"
@@ -245,9 +242,9 @@ def run_assemble_stage(force: bool = False) -> dict[str, Path]:
     FINAL_DIR.mkdir(parents=True, exist_ok=True)
     WORK_DIR.mkdir(parents=True, exist_ok=True)
 
-    clips = run_shots_stage(force=False)
-    narrations = run_narration_stage(force=False)
-    score_path = run_music_stage(force=False)
+    clips = run_shots_stage(force=force)
+    narrations = run_narration_stage(force=force)
+    score_path = run_music_stage(force=force)
 
     shots = storyboard["shots"]
     clip_list = [clips[s["id"]] for s in shots]
@@ -338,5 +335,5 @@ def run_assemble_stage(force: bool = False) -> dict[str, Path]:
 
 
 if __name__ == "__main__":
-    exports = run_assemble_stage()
+    exports = run_assemble_stage(force=True)
     print("Assembled exports:", {k: str(v) for k, v in exports.items()})
